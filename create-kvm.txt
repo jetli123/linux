@@ -1,0 +1,1 @@
+virt-install --name kvm-01 --ram 1024 --vcpus=2 --autostart --hvm --disk path=/home/kvm-bak/kvm-01.qcow2,size=20,format=qcow2 --cdrom /home/iso/CentOS-7-x86_64-DVD-1804.iso --graphics vnc,listen=0.0.0.0,port=5903 --network bridge=br0,model=e1000 --force --connect qemu:///system
