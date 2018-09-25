@@ -1,0 +1,61 @@
+﻿
+
+虚拟机的配置文件 
+
+在本篇文章中，虚拟机的创建是通过虚拟机配置文件创建的，配置文件的内容如下所示：
+<domain type='kvm'> 
+  <name>ubuntu14</name> 
+  <uuid>f5b8c05b-9c7a-3211-49b9-2bd635f7e2aa</uuid> 
+  <memory>1048576</memory> 
+  <currentMemory>1048576</currentMemory> 
+  <vcpu>1</vcpu> 
+  <os> 
+    <type>hvm</type>    // 配置虚拟机的启动方式 
+    <boot dev='cdrom'/> // 如果为虚拟机安装系统，那么配置此选项 
+    <boot dev='hd'/> // 虚拟机的系统已经安装完成，启动系统配置此选项 
+    <bootmenu enable='yes'/> 
+  </os> 
+  <features> 
+    <acpi/> 
+    <apic/> 
+    <pae/> 
+  </features> 
+  <clock offset='utc'/> 
+  <on_poweroff>destroy</on_poweroff> 
+  <on_reboot>restart</on_reboot> 
+  <on_crash>destroy</on_crash> 
+  <devices> 
+    <emulator>/usr/bin/kvm</emulator> 
+    <disk type="file" device="disk">  // 用于安装系统的虚拟磁盘 
+      <driver name="qemu" type="qcow2"/> 
+      <source file="/home/muhong/vm/img/ubuntu.qcow2"/> 
+      <target dev="vda" bus="virtio"/> 
+      <address type="pci" domain="0x0000" bus="0x00" slot="0x04" function="0x0"/> 
+    </disk> 
+    <disk type="file" device="cdrom">   // 配置系统的iso文件的路径（绝对路径） 
+      <driver name="qemu" type="raw"/> 
+      <source file="/home/muhong/ubuntuimage/ubuntu-14.04.5-server-amd64.iso"/> 
+      <target dev="hdc" bus="ide"/> 
+      <readonly/> 
+      <address type="drive" controller="0" bus="1" target="0" unit="0"/> 
+    </disk> 
+    <interface type='bridge'> 
+      <source bridge='br0'/>  // 宿主机的桥接网络的名称 
+      <mac address="00:0c:29:b6:24:9c"/> // 这个地址是虚拟机的物理地址 
+      <target dev='vnet0'/> 
+      <model type='virtio'/> 
+      <alias name='net0'/> 
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/> 
+    </interface> 
+    <controller type="ide" index="0"> 
+      <address type="pci" domain="0x0000" bus="0x00" slot="0x01" function="0x1"/> 
+    </controller> 
+    <input type='mouse' bus='ps2'/>   // vnc远程连接的控制 
+    <graphics type='vnc' port='-1' autoport="yes" listen='0.0.0.0'/> 
+    <console type='pty'> 
+      <target port='0'/> 
+    </console> 
+  </devices> 
+</domain>
+
+---------------------
