@@ -1,0 +1,23 @@
+﻿@all 【重要】喜讯：今后只要有网络就可以办公。
+
+土豆教育专属VPN已开通，支持所有常见系统连接，
+包括：PC（windows，MAC，Linux，Chromebook），
+移动端（IOS，Android，Windows Phone）
+
+
+连接信息：
+IP: 124.207.149.246
+
+IPsec PSK: FDXHSgpe2LvBFBHd
+
+Username: tododev
+
+Password: dfqxyfyw+hnxggxadmsxs4f
+
+（密码是大风歌）
+
+
+
+详细配置说明：（步骤较多，请仔细查看，有任何疑问请咨询鲁松涛）
+
+https://github.com/hwdsl2/setup-ipsec-vpn/blob/master/docs/clients-zh.md
