@@ -47,10 +47,3 @@ Your Password         :  redhat2018
 Your Encryption Method:  aes-256-cfb 
 
 Welcome to visit:https://teddysun.com/342.html
-
-
-
-centos7 安装 代理服务：
-1.下载 epel源
-wget https://mirrors.ustc.edu.cn/epel//7/x86_64/Packages/e/epel-release-7-11.noarch.rpm
-rpm -ivh epel-release-7-11.noarch.rpm
