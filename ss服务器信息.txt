@@ -1,0 +1,56 @@
+﻿
+启动和停止
+
+
+Shadowsocks使用命令
+
+启动：/etc/init.d/shadowsocks start
+停止：/etc/init.d/shadowsocks stop
+重启：/etc/init.d/shadowsocks restart
+查看状态：/etc/init.d/shadowsocks status
+卸载:./shadowsocks.sh uninstall
+
+Jet_Oracle@outlook.com
+REDhat@2018@
+
+
+Location: 	Chicago
+IP Address: 	45.76.24.82
+Username: 	root
+Password: 	Lx*5WgRrecVfjgV,
+
+
+
+
+CPU:	 	1 vCore
+RAM: 		1024 MB
+Storage: 	25 GB SSD
+Bandwidth:	0 GB of 1000 GB
+
+
+Label:		ss-server0
+Tag:		[Click here to set]
+OS:		CentOS 7 x64
+
+
+wget --no-check-certificate -O shadowsocks.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh
+ chmod +x shadowsocks.sh
+ ./shadowsocks.sh 2>&1 | tee shadowsocks.log
+
+
+
+
+Congratulations, Shadowsocks-python server install completed!
+Your Server IP        :  45.76.24.82 
+Your Server Port      :  2019 
+Your Password         :  redhat2018 
+Your Encryption Method:  aes-256-cfb 
+
+Welcome to visit:https://teddysun.com/342.html
+
+
+
+centos7 安装 代理服务：
+1.下载 epel源
+wget https://mirrors.ustc.edu.cn/epel//7/x86_64/Packages/e/epel-release-7-11.noarch.rpm
+rpm -ivh epel-release-7-11.noarch.rpm
