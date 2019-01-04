@@ -1,0 +1,19 @@
+[root@server-kvm ~]# qemu-img create -f raw /home/kvm/kvm-001.raw 10G
+Formatting '/home/kvm/kvm-001.raw', fmt=raw size=10737418240 
+
+[root@server-kvm ~]# cd /home/kvm/
+[root@server-kvm kvm]# ll
+total 0
+-rw-r--r--. 1 root root 10737418240 Sep 27 01:23 kvm-001.raw
+[root@server-kvm kvm]# cd
+[root@server-kvm ~]#
+[root@server-kvm ~]# virt-install --virt-type kvm --name kvm-002 --ram 1024 --cdrom /ISO/CentOS-7-x86_64-DVD-1804.iso --disk path=/home/kvm/kvm-002.raw --network bridge=br0 --graphics vnc,listen=0.0.0.0 --noautoconsole
+
+Starting install...
+Domain installation still in progress. You can reconnect to 
+the console to complete the installation process.
+[root@server-kvm ~]# 
+
+[root@kvm-server kvm]# vncviewer 192.168.10.109:5901
+
+进入开始安装 Centos7 系统
