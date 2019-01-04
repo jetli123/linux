@@ -1,3 +1,8 @@
+yum install -y qemu-kvm libvirt
+yum install -y virt-install
+yum install -y vnc
+yum install -y bridge-utils
+   
 [root@server-kvm ~]# qemu-img create -f raw /home/kvm/kvm-001.raw 10G
 Formatting '/home/kvm/kvm-001.raw', fmt=raw size=10737418240 
 
