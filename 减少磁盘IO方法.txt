@@ -1,0 +1,6 @@
+chattr +a filename  
+
+chattr - change file attributes(属性) on a Linux file system
+
+Note: 
+  When a file with the 'A' attribute set is accessed, its atime record is not modified.  This avoids a certain amount of disk I/O for laptop systems.
