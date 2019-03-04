@@ -1,0 +1,41 @@
+一、初始化设置密码
+/etc/init.d/mysql stop 
+cd /usr/local/mysql 
+mysqld_safe –user=mysql –skip-grant-tables –skip-networking & 
+mysql -u root mysql 
+mysql > UPPATE user SET password=PASSWORD(‘newpassword’) where USER=’root’; 
+mysql > FLUSH PRIVILEGES; 
+mysql > quit ; 
+/etc/init.d/mysql restart 
+mysql -u root -p
+
+方法1： 用SET PASSWORD命令 
+　　mysql -u root 
+　　mysql> SET PASSWORD FOR ‘root’@’localhost’ = PASSWORD(‘newpass’);
+
+方法2：用mysqladmin 
+　　mysqladmin -u root password “newpass” 
+　　如果root已经设置过密码，采用如下方法 
+　　mysqladmin -u root password oldpass “newpass”
+
+方法3： 用UPDATE直接编辑user表 
+　　mysql -u root 
+　　mysql> use mysql; 
+　　mysql> UPDATE user SET Password = PASSWORD(‘newpass’) WHERE user = ‘root’; 
+　　mysql> FLUSH PRIVILEGES;
+
+二、丢失root密码时，设置root密码
+方法1： 
+　　mysqld_safe –skip-grant-tables& 
+　　mysql -u root mysql 
+　　mysql> UPDATE user SET password=PASSWORD(“new password”) WHERE user=’root’; 
+　　mysql> FLUSH PRIVILEGES; 
+　　 
+方法2： 
+1、修改mysql的配置文件（默认为/etc/my.cnf）,在[mysqld]下添加一行skip-grant-tables
+
+2、保存配置文件后，重启mysql服务 service mysqld restart
+
+3、mysql -u root -p登录mysql，然后不输入密码直接回车，然后按照上面的流程修改密码
+
+4、密码修改完毕，按照流程1的删除配置文件中的那行，然后重启mysql服务
