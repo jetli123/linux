@@ -1,6 +1,15 @@
+一、
 chattr +a filename  
 
 chattr - change file attributes(属性) on a Linux file system
 
 Note: 
   When a file with the 'A' attribute set is accessed, its atime record is not modified.  This avoids a certain amount of disk I/O for laptop systems.
+  
+二、
+exec:
+　　cmd >a 2>a 相当于使用了两个互相竞争使用文件a的管道;
+
+　　而cmd >a 2>&1 只使用了一个管道，但在其源头已经包括了stdout和stderr。
+
+　　从IO效率上来讲，cmd >a 2>&1的效率应该更高!
