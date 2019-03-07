@@ -6,7 +6,7 @@
 [root@localhost ~]$ cat file | less
 
 为了执行上面的指令，Shell创建了两个进程来分别执行cat和less。下图展示了这两个进程是如何使用管道的： 
-![image](picture or gif url)
+![image](linux/images/1b.png)
 
 2. linux多进程并发数控制
 最近小A需要生产2015年全年的KPI数据报表，现在小A已经将生产脚本写好了，生产脚本一次只能生产指定一天的KPI数据，假设跑一次生产脚本需要5分钟，那么： 
