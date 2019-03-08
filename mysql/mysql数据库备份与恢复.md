@@ -1,11 +1,13 @@
 二、数据备份与恢复
 
 （1）备份：从数据库导出数据：
+
   格式：mysqldump -h链接ip -P(大写)端口 -u用户名 -p密码数据库名>d:XX.sql(路劲)
 
  示例：mysqldump -h132.72.192.432 -P3307 -uroot -p8888 htgl > bak.sql;
 
- （2）备份导出示例：
+（2）备份导出示例：
+ 
 1、导出数据和表结构——将特定数据库特定表中的数据和表格结构和数据全部返回
 
 mysqldump --u  b_user -h 101.3.20.33 -p'H_password'  -P3306 database_di up_subjects > 0101_0630_up_subjects.sql
@@ -18,7 +20,7 @@ mysqldump --u  b_user -h 101.3.20.33 -p'H_password'  -P3306 -d database_di up
 
 mysqldump --u  b_user -h 101.3.20.33 -p'H_password'  -P3306 database_di up_subjects --where=" ctime>'2017-01-01' and ctime<'2017-06-30'" > 0101_0630_up_subjects.sql
 
-  4、导出数据却不导出表结构——只返回特定数据库中特定表格的数据，不返回表格结构，添加“-t”命令参数
+4、导出数据却不导出表结构——只返回特定数据库中特定表格的数据，不返回表格结构，添加“-t”命令参数
 
 mysqldump --u  b_user -h 101.3.20.33 -p'H_password' -t -P3306 database_di up_subjects  >0101_0630_up_subjects.sql
 
@@ -27,6 +29,7 @@ mysqldump --u  b_user -h 101.3.20.33 -p'H_password' -t -P3306 database_di up_s
 mysqldump  --u  b_user -h 101.3.20.33 -p'H_password' -P3306 --databases test  > all_database.sql
 
   （3）恢复导入数据库数据：
+  
 将导出的本地文件导入到指定数据库
 
 1、系统命令行
@@ -48,7 +51,8 @@ source tb1_tb2.sql;
 mysql -u  b_user -h 101.3.20.33 -p'H_password' -P3306   < all_database.sql
 
   （4）具体恢复示例：
-  1、先登录该MySQL服务器，切换要导入数据的数据
+  
+1、先登录该MySQL服务器，切换要导入数据的数据
 
 具体命令如下：
 
