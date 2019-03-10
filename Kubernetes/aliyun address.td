@@ -24,10 +24,13 @@ $ sudo docker pull registry.cn-beijing.aliyuncs.com/lijet/coredns:[镜像版本�
 
 3. 将镜像推送到Registry
 
+登录：
 $ sudo docker login --username=公仔小猪仔 registry.cn-beijing.aliyuncs.com
 
+通过tag 重命名镜像
 $ sudo docker tag [ImageId] registry.cn-beijing.aliyuncs.com/lijet/coredns:[镜像版本号]
 
+将重新命名的镜像，通过转有网络地址推送至Registry：
 $ sudo docker push registry.cn-beijing.aliyuncs.com/lijet/coredns:[镜像版本号]
 
 请根据实际镜像信息替换示例中的[ImageId]和[镜像版本号]参数。
