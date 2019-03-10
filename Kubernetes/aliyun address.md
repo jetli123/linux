@@ -1,33 +1,18 @@
-修改信息
-仓库名称k8s.io
 
-仓库地域华北2（北京）
+仓库名称coredns kube-apiserver-amd64 kube-controller-manager-amd64 etc.
 
-仓库类型公开
+公网地址 registry.cn-beijing.aliyuncs.com/lijet/coredns
 
-代码仓库无
+专有网络 registry-vpc.cn-beijing.aliyuncs.com/lijet/coredns
 
-公网地址 
-
-registry.cn-beijing.aliyuncs.com/lijet/k8s.io
-
-专有网络 
-
-registry-vpc.cn-beijing.aliyuncs.com/lijet/k8s.io
-
-经典内网 
-
-registry-internal.cn-beijing.aliyuncs.com/lijet/k8s.io
-
-摘要this is kubelnets images
-
-操作指南
+经典内网 registry-internal.cn-beijing.aliyuncs.com/lijet/coredns
 
 镜像描述
 
 1. 登录阿里云Docker Registry
 
 $ sudo docker login --username=公仔小猪仔 registry.cn-beijing.aliyuncs.com
+$ sudo docker login --username=lijet@1396552138096608 registry.cn-beijing.aliyuncs.com
 
 用于登录的用户名为阿里云账号全名，密码为开通服务时设置的密码。
 
@@ -35,15 +20,15 @@ $ sudo docker login --username=公仔小猪仔 registry.cn-beijing.aliyuncs.com
 
 2. 从Registry中拉取镜像
 
-$ sudo docker pull registry.cn-beijing.aliyuncs.com/lijet/k8s.io:[镜像版本号]
+$ sudo docker pull registry.cn-beijing.aliyuncs.com/lijet/coredns:[镜像版本号]
 
 3. 将镜像推送到Registry
 
 $ sudo docker login --username=公仔小猪仔 registry.cn-beijing.aliyuncs.com
 
-$ sudo docker tag [ImageId] registry.cn-beijing.aliyuncs.com/lijet/k8s.io:[镜像版本号]
+$ sudo docker tag [ImageId] registry.cn-beijing.aliyuncs.com/lijet/coredns:[镜像版本号]
 
-$ sudo docker push registry.cn-beijing.aliyuncs.com/lijet/k8s.io:[镜像版本号]
+$ sudo docker push registry.cn-beijing.aliyuncs.com/lijet/coredns:[镜像版本号]
 
 请根据实际镜像信息替换示例中的[ImageId]和[镜像版本号]参数。
 
@@ -61,11 +46,11 @@ $ sudo docker push registry.cn-beijing.aliyuncs.com/lijet/k8s.io:[镜像版本�
 
 $ sudo docker images
 
-REPOSITORY                                                         TAG                 IMAGE ID            CREATED             VIRTUAL 
+REPOSITORY                                                 TAG                 IMAGE ID            CREATED             VIRTUAL 
 
 SIZE
 
-registry.aliyuncs.com/acs/agent                                    0.7-dfb6816         37bb9c63c8b2        7 days ago          37.89 MB
+registry.aliyuncs.com/acs/agent                            0.7-dfb6816         37bb9c63c8b2        7 days ago          37.89 MB
 
 $ sudo docker tag 37bb9c63c8b2 registry-vpc.cn-beijing.aliyuncs.com/acs/agent:0.7-dfb6816
 
