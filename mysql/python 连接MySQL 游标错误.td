@@ -18,7 +18,10 @@ For nonbuffered cursors, rows are not fetched from the server until a row-fetchi
 you must be sure to fetch all rows of the result set before executing any other statements on the same connection, 
 or an InternalError (Unread result found) exception will be raised.
 
+To create a buffered cursor, use the buffered argument when calling a connection's cursor() method. 
+Alternatively, to make all cursors created from the connection buffered by default, use the buffered connection argument.
 
+Example:
 import mysql.connector
 
 cnx = mysql.connector.connect()
