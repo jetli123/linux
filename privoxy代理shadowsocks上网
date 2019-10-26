@@ -44,6 +44,7 @@ curl --socks5 127.0.0.1:1080 http://httpbin.org/ip
   "origin": "x.x.x.x"       #你的Shadowsock服务器IP
 }
 
+注意：添加 防火墙 10086 2020，关闭 selinux 
 
 安装Privoxy
 下载地址：http://www.privoxy.org/sf-download-mirror/Sources/3.0.26%20%28stable%29/privoxy-3.0.26-stable-src.tar.gz
