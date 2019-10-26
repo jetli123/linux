@@ -1,0 +1,11 @@
+Location: Los Angeles
+IP Address: 149.248.4.45 
+Username: root
+Password: 8Fy-o[PVPqC%s_B,
+CPU: 1 vCore
+
+
+RAM: 1024 MB   
+Storage: 25 GB SSD
+Bandwidth:  0.09 GB of 1000 GB 
+OS:  CentOS 8 x64
