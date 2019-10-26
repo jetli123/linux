@@ -50,7 +50,9 @@ curl --socks5 127.0.0.1:1080 http://httpbin.org/ip
 上述安好了shadowsocks，但它是socks5代理，我门在shell里执行的命令，发起的网络请求现在还不支持socks5代理，只支持http／https代理。为了我门需要安装privoxy代理，它能把电脑上所有http请求转发给shadowsocks。 
 访问官网http://www.privoxy.org/获得Privoxy的最新源码:
 privoxy-3.0.26-stable-src.tar.gz,执行tar -zxvf privoxy-3.0.26-stable-src.tar.gz解压，然后cd privoxy-3.0.26-stable进去。 
-安装前需要执行useradd privoxy创建一个用户privoxy，然后依次执行如下三条命令:
+安装前需要执行useradd privoxy创建一个用户privoxy，
+yum install -y autoconf
+然后依次执行如下三条命令:
 autoheader && autoconf
 ./configure
 make && make install
